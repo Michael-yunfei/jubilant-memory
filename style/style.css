@@ -24,15 +24,38 @@
 	flex-direction: column;
 	width: 99vmin;
     height: 81%;
-    /* border: 3px solid rgba(197, 63, 63, 0.9); */
+    border: 3px solid rgba(197, 63, 63, 0.9);
 	/* border: 0.5vmin solid #ccc; */
 	/* border-bottom-width: 10vmin; */
 	padding: 3vmin;
     border-radius: 2vmin;
 }
 
-.chinesenewyear > h2 {
+.titleandplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "titleh2 titleh2 titleh2 titlebutton";
+    
+}
+
+.titleandplay > h2 {
+    grid-area: titleh2;
     color: white;
+}
+
+.titlebutton > button {
+    width: 3.7rem;
+    height: 3.7rem;
+    border: #ccc;
+    border-radius: 2rem;
+    font-size: large;
+    cursor: pointer;
+}
+
+.titlebutton {
+    grid-area: titlebutton;
+    text-align: center;
 }
 
 .chinesenewyear > p {
@@ -42,6 +65,7 @@
     padding-bottom: 10px;
     text-align: justify;
 }
+
 
 .glass {
     /* background:linear-gradient(to left bottom,#7b1113, #7b1113);
@@ -126,4 +150,18 @@ img {
 
 .cz12{
     grid-area: cz12;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
+.chapter1header {
+    color: white;
 }

@@ -8,9 +8,8 @@ for (var i = 0; i < 12; i++) {
     zodiaclist.push(foo)
 }
 
-const zodiacstory = {
-    imcz1 : "Here are your personality traits: quick-witted, smart, \
-    charming, and persuasive",
+const zodiaccontent = {
+    imcz1 : "Here are your personality traits: quick-witted, smart, charming, and persuasive",
     imcz2:  "Here are your personality traits: " + "patient, kind, stubborn, and conservative",
     imcz3: "Here are your personality traits: " + "authoritative, emotional, courageous, and intense",
     imcz4: "Here are your personality traits: " + "popular, compassionate, and sincere",
@@ -25,15 +24,37 @@ const zodiacstory = {
 }
 
 
-
-
 function zodiacfun (choice) {
     const foo = choice.getAttribute('id');
     const zodiacstory = document.querySelector("#zodiac")
-    zodiacstory.innerHTML = "2021 is a year of the Ox, and the overall fortunes\
-     of Rat people (those born in a year of the Rat) are very good. Since the\
-      zodiac Rat and the zodiac Ox have a good relationship, the fortunes of Rat\
-       people will be exceptionally smooth. This year, regardless of whether they\
-        have difficulties in their careers or studies, Rats can get help from\
-         others in time." + `${foo}`
+    let nextbutton = document.querySelector(".titlebutton")
+
+    if (foo == 'imcz12') {
+        let pig = document.querySelector("#imcz12")
+        pig.style.animation = "rotation 3s infinite linear"
+        zodiacstory.innerHTML = zodiaccontent[foo] + ". You are born in the year of \
+    pig. Let's find what the year of OX would mean to you :)"
+        nextbutton.innerHTML = `<button type='button' id='buttondisplay'>
+        <a href="./src/chapter1.html">Next</a>
+        </button>`
+    } else {
+        zodiacstory.innerHTML = zodiaccontent[foo]
+    }
 }
+
+
+// let ispalying = true
+
+// function oxplayfun() {
+//     var oxaudio = document.querySelector("#oxaudio")
+//     var buttondisplay = document.querySelector("#buttondisplay")
+//     if (ispalying) {
+//         oxaudio.play()
+//         ispalying = false
+//         buttondisplay.innerHTML = "Stop"
+//     } else {
+//         oxaudio.pause()
+//         ispalying = true
+//         buttondisplay.innerHTML = "Play"
+//     }
+// }
